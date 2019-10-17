@@ -1,0 +1,22 @@
+Index of 
+
+
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id#</th>
+      <th scope="col">Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @categories.each do |item| %>
+      <tr>
+      <th scope="row"><%= item.id %></th>
+      <td><%= item.name %></td>
+      </tr>
+    <% end %>
+
+
+
+  </tbody>
+</table>
