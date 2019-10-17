@@ -1,6 +1,6 @@
-Index of 
+<h1>Admin &raquo; Categories </h1>
 
-
+<%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
   <table class="table table-hover">
   <thead>
     <tr>
@@ -9,7 +9,7 @@ Index of
     </tr>
   </thead>
   <tbody>
-    <%= @categories.each do |item| %>
+    <% @categories.each do |item| %>
       <tr>
       <th scope="row"><%= item.id %></th>
       <td><%= item.name %></td>
