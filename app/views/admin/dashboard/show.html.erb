@@ -1,2 +1,18 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard</h1>
+
+
+<h3>
+<p class="glyphicon glyphicon-shopping-cart"></p>
+<span>
+Amount of products in store:
+<%= link_to @products.count, admin_products_path %>
+</span>
+
+<br>
+
+<p class="glyphicon glyphicon-align-justify"></p>
+<span>
+Number of categories:
+<%= @categories.count %>
+</span>
+</h3>
