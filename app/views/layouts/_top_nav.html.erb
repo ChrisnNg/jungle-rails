@@ -33,7 +33,7 @@
       <% if current_user %>
         Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
       <% else %>
-        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <%= link_to 'Login', '/login', :class => "login btn btn-info" %> <%= link_to 'Signup', '/signup', :class => "login btn btn-info" %>
       <% end %>
 
        <li class="dropdown">
