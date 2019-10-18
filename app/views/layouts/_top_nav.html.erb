@@ -31,6 +31,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
+      <%= current_user.inspect %>
         Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
       <% else %>
         <%= link_to 'Login', '/login', :class => "login btn btn-info" %> <%= link_to 'Signup', '/signup', :class => "login btn btn-info" %>
