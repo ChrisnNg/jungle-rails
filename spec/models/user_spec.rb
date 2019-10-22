@@ -1,16 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'validations' do
-    subject {
-      described_class.new(
-      first_name: 'John',
-      last_name: 'Doe',
-      email: 'test@test.COM',
-      password: 'password',
-      password_confirmation: 'password'
 
-    )}
+  subject {
+    described_class.new(
+    first_name: 'John',
+    last_name: 'Doe',
+    email: 'test@two.COM',
+    password: 'password',
+    password_confirmation: 'password'
+  )}
+
+  describe 'validations' do
 
     it "validates that user generated with valid params" do
       expect(subject).to be_valid
@@ -40,7 +41,7 @@ RSpec.describe User, type: :model do
     User.create!(
       first_name: 'John',
       last_name: 'Doe',
-      email: 'test@test.COM',
+      email: 'test@two.COM',
       password: 'password',
       password_confirmation: 'password'
     )
@@ -48,7 +49,7 @@ RSpec.describe User, type: :model do
     second_subject = User.new(
       first_name: 'Teddy',
       last_name: 'Bear',
-      email: 'test@test.COM',
+      email: 'test@two.COM',
       password: 'password',
       password_confirmation: 'password'
     )
@@ -74,9 +75,46 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
     # examples for this class method here
+
+    it 'should validate the email and password' do
+      User.create!(
+        first_name: 'John',
+        last_name: 'Doe',
+        email: 'test@new.COM',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+
+      expect(User.authenticate_with_credentials('test@new.COM', 'password')).to_not eq(nil)
+
+    end
+
+    it 'should validate the email and password even if email has extra spaces before/afer' do
+      User.create!(
+        first_name: 'John',
+        last_name: 'Doe',
+        email: 'test@new.COM',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+      expect(User.authenticate_with_credentials('  test@new.COM ', 'password')).to_not eq(nil)
+
+    end
+
+    it 'should validate the email case insensitively' do
+      User.create!(
+        first_name: 'John',
+        last_name: 'Doe',
+        email: 'test@new.COM',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+      expect(User.authenticate_with_credentials('TEST@new.COM', 'password')).to_not eq(nil)
+
+    end
   end
 
-  
+
 end
 
 
