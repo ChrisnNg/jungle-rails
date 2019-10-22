@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'user validations' do
+  describe 'validations' do
     subject {
       described_class.new(
       first_name: 'John',
       last_name: 'Doe',
       email: 'test@test.COM',
       password: 'password',
-      password_confirmation: 'password',
+      password_confirmation: 'password'
 
     )}
 
@@ -31,8 +31,40 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it "validates that email exists" do
+    subject.email = nil
+    expect(subject).to_not be_valid
+  end
 
+  it "validates that email is unique" do
+    User.create!(
+      first_name: 'John',
+      last_name: 'Doe',
+      email: 'test@test.COM',
+      password: 'password',
+      password_confirmation: 'password'
+    )
 
+    second_subject = User.new(
+      first_name: 'Teddy',
+      last_name: 'Bear',
+      email: 'test@test.COM',
+      password: 'password',
+      password_confirmation: 'password'
+    )
+
+    expect(second_subject).to_not be_valid
+  end
+
+  it "validates that first_name exists" do
+    subject.first_name = nil
+    expect(subject).to_not be_valid
+  end
+
+  it "validates that last_name exists" do
+    subject.last_name = nil
+    expect(subject).to_not be_valid
+  end
   end
 end
 
