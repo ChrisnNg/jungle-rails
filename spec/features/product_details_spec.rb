@@ -23,15 +23,18 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
       # save_screenshot
 
       # click_on Faker::Hipster.sentence(3)
-      within(first('footer')){
-        click_on("Details")
+      within(first('article')){
+        click_link "Details »"
       }
 
       # DEBUG
-      save_screenshot
+      sleep 5
+      save_screenshot 'products_specs.jpg'
   
-      # VERIFY
 
+      # VERIFY
+      expect(page).to have_content "Apparel »"
+      expect(page).to have_content "Quantity"
     end
 
 
