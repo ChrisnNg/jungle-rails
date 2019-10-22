@@ -65,7 +65,18 @@ RSpec.describe User, type: :model do
     subject.last_name = nil
     expect(subject).to_not be_valid
   end
+
+  it "validates the length of password is longer than minimum" do
+    subject.password = 'pa'
+    expect(subject).to_not be_valid
   end
+  end
+
+  describe '.authenticate_with_credentials' do
+    # examples for this class method here
+  end
+
+  
 end
 
 
