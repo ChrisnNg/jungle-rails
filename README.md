@@ -57,6 +57,14 @@ As a student, I have used this application to solve bugs and implement tickets V
   - User Login
     * Test that users can login successfully and are taken to the home page once they are signed in.
 
+## Final Product
+
+About Page
+![About Page](https://github.com/ChrisnNg/jungle-rails/blob/master/lib/assets/jungle_about.png?raw=true "About Page")
+
+Main Page
+![Main Page](https://github.com/ChrisnNg/jungle-rails/blob/master/lib/assets/jungle_main.png?raw=true "Main Page")
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
