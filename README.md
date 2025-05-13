@@ -1,6 +1,14 @@
-# Jungle
+### RailsMart | Full-Stack E-Commerce Platform
 
-> A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A responsive online store with secure payment processing built with Rails 4.2 for purposes of learning Rails by example.
+
+Key Features:
+- 🛒 Complete Store Functionality - Product listings, cart system, and checkout flow
+- 💳 Stripe Integration - Secure payment processing with test mode support
+- 📦 Admin Dashboard - Manage inventory, orders, and customer data
+- 🔒 User Accounts - Registration, authentication, and order history
+
+Tech Stack: `Rails` | `PostgreSQL` | `Stripe` | `Capybara` | `PhantomJS`
 
 As a student, I have used this application to solve bugs and implement tickets VIA ticket-style. Below is a list of those tickets I have completed.
 
