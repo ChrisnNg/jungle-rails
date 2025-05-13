@@ -1,4 +1,4 @@
-### RailsMart | Full-Stack E-Commerce Platform
+### Jungle Rails | Full-Stack E-Commerce Platform
 
 A responsive online store with secure payment processing built with Rails 4.2 for purposes of learning Rails by example.
 
